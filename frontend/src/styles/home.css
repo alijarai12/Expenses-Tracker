@@ -1,0 +1,40 @@
+/* src/styles/home.css */
+
+.home-container {
+    display: flex;
+  }
+  
+  .home-content {
+    margin-left: 250px; /* Same as sidenav width */
+    padding: 40px;
+    width: calc(100% - 250px);
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .home-content h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  
+  .welcome-message {
+    font-size: 1.5rem;
+    color: #777;
+    background: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,91 @@
+/* src/styles/expenses.css */
+.expenses-page {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px; /* Adjust based on the width of your sidebar */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-expense-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.create-expense-button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.expenses-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+}
+
+.expenses-table th, .expenses-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.expenses-table th {
+  background-color: #f2f2f2;
+}
+
+.expenses-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.expenses-table tr:hover {
+  background-color: #ddd;
+}
+
+.edit-button, .delete-button {
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-button {
+  background-color: #ffa500;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #e69500;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c62828;
+}
