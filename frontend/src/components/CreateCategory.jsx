@@ -1,7 +1,7 @@
 // src/components/CreateCategory.jsx
 import React, { useState } from 'react';
-import api from '../api';
-import '../styles/createCategory.css';
+import '../styles/createCategory.css'; 
+import api from '../api'; 
 
 const CreateCategory = ({ onCategoryCreated }) => {
   const [category, setCategory] = useState({
@@ -19,21 +19,23 @@ const CreateCategory = ({ onCategoryCreated }) => {
     try {
       const tokenString = localStorage.getItem('token');
       const token = JSON.parse(tokenString);
+
       await api.post('api/categories/', category, {
         headers: {
           'Authorization': `Bearer ${token.access}`,
         },
       });
-      onCategoryCreated(); // Notify parent component about the new category
+
+      onCategoryCreated();
       setCategory({ name: '', description: '' }); // Reset form
     } catch (error) {
-      console.error('Error creating category:', error);
-      setError('Failed to create category.');
+      console.error('Error creating category:', error.response ? error.response.data : error.message);
+      setError(error.response ? error.response.data : 'Failed to create category.');
     }
   };
 
   return (
-    <div className="create-category-form-container">
+    <div className="create-category-container">
       <h2>Create New Category</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit} className="create-category-form">
@@ -44,21 +46,22 @@ const CreateCategory = ({ onCategoryCreated }) => {
             name="name"
             value={category.name}
             onChange={handleChange}
-            className="input-field"
             required
           />
         </div>
         <div className="form-group">
           <label>Description</label>
-          <textarea
+          <input
+            type="text"
             name="description"
             value={category.description}
             onChange={handleChange}
-            className="input-field"
             required
           />
         </div>
-        <button type="submit" className="submit-button">Create</button>
+        <div className="form-group form-buttons">
+          <button type="submit" className="submit-button">Create</button>
+        </div>
       </form>
     </div>
   );

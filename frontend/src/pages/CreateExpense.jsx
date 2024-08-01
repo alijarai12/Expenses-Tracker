@@ -27,6 +27,7 @@ const CreateExpense = () => {
           },
         });
         setCategories(response.data);
+        console.log('Fetched categories:', response.data); // Debugging line
       } catch (error) {
         console.error('Error fetching categories:', error);
         setError('Failed to fetch categories.');
@@ -46,6 +47,8 @@ const CreateExpense = () => {
       const tokenString = localStorage.getItem('token');
       const token = JSON.parse(tokenString);
 
+      console.log('Submitting expense:', expense); // Debugging line
+
       await api.post('api/expenses/', expense, {
         headers: {
           'Authorization': `Bearer ${token.access}`,
@@ -63,9 +66,9 @@ const CreateExpense = () => {
     <div className="create-expense-container">
       <SideNavbar />
       <div className="create-expense-content">
-        <h2>Create New Expense</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit} className="create-expense-form">
+        <h2>Create New Expense</h2>
           <div className="form-group">
             <label>Amount</label>
             <input
@@ -95,11 +98,15 @@ const CreateExpense = () => {
               required
             >
               <option value="">Select Category</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
+              {categories.length > 0 ? (
+                categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))
+              ) : (
+                <option value="">No categories available</option>
+              )}
             </select>
           </div>
           <div className="form-group">

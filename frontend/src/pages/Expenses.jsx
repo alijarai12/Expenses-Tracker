@@ -1,4 +1,3 @@
-// src/pages/Expenses.jsx
 import React, { useEffect, useState } from 'react';
 import SideNavbar from '../components/Navbar';
 import '../styles/expenses.css';
@@ -64,7 +63,7 @@ const Expenses = () => {
     <div className="expenses-page">
       <SideNavbar />
       <div className="main-content">
-        <div className="header">
+        <header className="headerexpenses">
           <h1>Expenses</h1>
           <button
             className="create-expense-button"
@@ -72,7 +71,7 @@ const Expenses = () => {
           >
             <i className="fas fa-plus"></i> Add Expense
           </button>
-        </div>
+        </header>
         {error && <p className="error-message">{error}</p>}
         <div className="table-container">
           <table className="expenses-table">
@@ -90,7 +89,7 @@ const Expenses = () => {
                 expenses.map((expense) => (
                   <tr key={expense.id}>
                     <td>{expense.amount}</td>
-                    <td>{expense.date}</td>
+                    <td>{new Date(expense.date).toLocaleDateString()}</td>
                     <td>{expense.category.name}</td>
                     <td>{expense.description}</td>
                     <td>

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'expenses',
     'account',
 
+    'django_filters',
     'rest_framework',
     'rest_framework_simplejwt', 
     'corsheaders',
@@ -86,13 +87,17 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default Django backend
+    # Add other backends if necessary
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-    ),
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+
 }
 
 # Keep this for development

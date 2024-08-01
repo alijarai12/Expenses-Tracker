@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -32,17 +31,29 @@ const Login = () => {
 
         // Store the entire token object
         localStorage.setItem('token', JSON.stringify(response.data.token));
-        console.log('Token stored:', localStorage.getItem('token')); // Add this line
-
+        console.log('Token stored:', localStorage.getItem('token'));
 
         console.log('Login successful:', response.data);
         navigate('/');
       } catch (error) {
         console.error('There was a problem with the login:', error);
-        if (error.response && error.response.data && error.response.data.error) {
-          setError(error.response.data.error.non_field_errors[0]);
+
+        if (error.response) {
+          if (error.response.data) {
+            if (error.response.data.detail) {
+              setError(error.response.data.detail);
+            } else if (error.response.data.non_field_errors) {
+              setError(error.response.data.non_field_errors[0]);
+            } else {
+              setError('Login failed. Please try again.');
+            }
+          } else {
+            setError('Login failed. Please try again.');
+          }
+        } else if (error.request) {
+          setError('No response from the server. Please try again later.');
         } else {
-          setError('Login failed. Please try again.');
+          setError('An error occurred. Please try again.');
         }
       }
     };
@@ -56,7 +67,7 @@ const Login = () => {
             <div className="form-group">
               <label>Username:</label>
               <input
-                type="username"
+                type="text"
                 name="username"
                 value={formDetails.username}
                 onChange={inputChange}
@@ -74,7 +85,7 @@ const Login = () => {
               />
             </div>
             {error && <p className="error">{error}</p>}
-            <button type="submit">Login</button>
+            <button type="submit" className="submit-button">Login</button>
           </form>
   
           <p>
@@ -86,6 +97,6 @@ const Login = () => {
         </div>
       </div>
     );
-  };
-  
-  export default Login;
+};
+
+export default Login;
