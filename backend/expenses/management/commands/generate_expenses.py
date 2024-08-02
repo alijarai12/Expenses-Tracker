@@ -37,3 +37,6 @@ class Command(BaseCommand):
             )
 
         self.stdout.write(self.style.SUCCESS('Successfully generated random expenses data'))
+
+
+# cmd = python manage.py generate_expenses

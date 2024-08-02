@@ -45,7 +45,7 @@ const EditExpense = () => {
             'Authorization': `Bearer ${token.access}`,
           },
         });
-        setCategories(response.data);
+        setCategories(response.data.results);
       } catch (error) {
         console.error('Error fetching categories:', error);
         setError('Failed to fetch categories.');

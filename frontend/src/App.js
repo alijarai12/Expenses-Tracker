@@ -8,7 +8,6 @@ import Expenses from './pages/Expenses';
 import CreateExpense from './pages/CreateExpense';
 import EditExpense from './pages/EditExpense';
 import EditCategory from './pages/EditCategory';
-import ListJoinedChatRoom from './pages/ListJoinedChatRoom';
 import Category from './pages/Category';
 
 import Profile from './pages/Profile';
@@ -25,8 +24,6 @@ const App = () => {
         <Route path="/expenses/edit/:id" element={<EditExpense />} />
         <Route path="/category/edit/:id" element={<EditCategory />} />
         
-
-        <Route path="/chat/list-joined-chat-rooms" element={<ListJoinedChatRoom />} />
         <Route path="/category" element={<Category />} />
         <Route path="/profile" element={<Profile />} />
 

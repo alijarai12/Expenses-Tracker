@@ -15,7 +15,7 @@
   margin-bottom: 20px;
 }
 
-.header h1 {
+.headerexpenses h1 {
   font-size: 24px;
   color: #333;
 }
@@ -31,12 +31,19 @@
 }
 
 .create-expense-button:hover {
-  background-color: #1abc9c; 
+  background-color: #16a085;
 }
 
 .error-message {
   color: red;
   margin-bottom: 20px;
+}
+
+.search-input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 .table-container {
@@ -61,7 +68,7 @@
 
 .edit-button,
 .delete-button {
-  background-color: #1abc9c !important;
+  background-color: #1abc9c;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -72,13 +79,110 @@
 }
 
 .edit-button:hover {
-  background-color: #0056b3; 
+  background-color: #16a085;
 }
 
 .delete-button {
-  background-color: #dc3545; 
+  background-color: #dc3545;
 }
 
 .delete-button:hover {
-  background-color: #c82333; 
+  background-color: #c82333;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination-button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .pagination-button:hover:not(:disabled) {
+  background-color: #16a085;
+} */
+
+/* .pagination-button:disabled {
+  background-color: #16a085;
+} */
+
+.pagination-info {
+  font-size: 16px;
+  color: #333;
+}
+
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px; /* Add space between elements */
+}
+
+.date-inputs span {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.date-inputs label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.date-inputs label input {
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.date-inputs label input[type="number"] {
+  width: 100px; /* Set a fixed width for the input fields */
+}
+
+.download-pdf-button {
+  display: flex;
+  align-items: center;
+}
+
+.download-pdf-button button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* Space between the input fields and button */
+}
+
+.download-pdf-button button:hover {
+  background-color: #16a085;
+}
+
+.download-pdf-heading {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold for emphasis */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.download-pdf-heading span {
+  display: block; /* Make each span take full width */
+  margin-bottom: 5px; /* Space between lines */
 }

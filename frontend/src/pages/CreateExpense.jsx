@@ -1,7 +1,8 @@
+// src/pages/CreateExpense.jsx
 import React, { useState, useEffect } from 'react';
-import SideNavbar from '../components/Navbar'; // Adjust the path if needed
+import SideNavbar from '../components/Navbar';
 import api from '../api';
-import '../styles/createExpense.css'; // Adjust the path if needed
+import '../styles/createExpense.css';
 import { useNavigate } from 'react-router-dom';
 
 const CreateExpense = () => {
@@ -26,7 +27,9 @@ const CreateExpense = () => {
             'Authorization': `Bearer ${token.access}`,
           },
         });
-        setCategories(response.data);
+
+        // Adjust based on API response structure
+        setCategories(response.data.results || response.data);
         console.log('Fetched categories:', response.data); // Debugging line
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -68,7 +71,7 @@ const CreateExpense = () => {
       <div className="create-expense-content">
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit} className="create-expense-form">
-        <h2>Create New Expense</h2>
+          <h2>Create New Expense</h2>
           <div className="form-group">
             <label>Amount</label>
             <input

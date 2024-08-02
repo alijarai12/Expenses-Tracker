@@ -54,3 +54,36 @@
   text-align: center;
   margin-top: 10px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.pagination-button:hover {
+  background-color: #45a049;
+}
+
+/* .pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+} */
+
+.page-info {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 0 10px;
+}

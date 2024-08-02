@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SideNavbar from '../components/Navbar';
 import '../styles/home.css';
 
 const Home = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    setIsLoggedIn(!!token);
-  }, []);
-
+  
   return (
     <div className="home-container">
       <SideNavbar />
