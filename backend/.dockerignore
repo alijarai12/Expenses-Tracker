@@ -2,11 +2,23 @@
 __pycache__/
 *.py[cod]
 
-# Virtual environment
-env
+# Virtual env
+env/
 
-# Django 
-db.sqlite3
+# Ignore environment files
+../.env
 
-# Docker 
-Dockerfile
+# Postgresql
+postgres_data
+./postgres_data
+postgres_data/
+
+
+#Container
+logs
+static
+media
+redis
+_redis_data
+mongodb_data
+logs

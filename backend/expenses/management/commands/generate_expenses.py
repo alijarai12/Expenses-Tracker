@@ -21,7 +21,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR('No categories found. Please create some categories first.'))
             return
 
-        for _ in range(20):  # Adjust the range for the number of records you want to create
+        for _ in range(100):  # Adjust the range for the number of records you want to create
             user = random.choice(users)
             category = random.choice(categories)
             amount = round(random.uniform(10.0, 1000.0), 2)

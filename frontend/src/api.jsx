@@ -1,8 +1,9 @@
 // src/api.jsx
 import axios from 'axios';
 
+// Use the environment variable for the base URL
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/', // Replace with your actual API base URL
+  baseURL: process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/', // Fallback to default if env variable is not set
 
 });
 
