@@ -5,7 +5,7 @@ A web application for tracking personal expenses and managing budgets, built usi
 ## Features
 
 - Track and manage personal expenses.
-- Categorize expenses and export pdf file of expenses.
+- Categorize expenses and  export them as PDF files.
 - Responsive and user-friendly UI.
 - User authentication and authorization.
 - Dockerized setup for easy deployment.
@@ -92,4 +92,4 @@ Here are some screenshots of the application:
 ![Category Page](images/category.png)
 ![Expenses Page](images/expenses.png)
 ![download pdf of expenses](images/download-pdf.png)
-(images/pdf-file.png)
+![pdf file of expenses](images/pdf-file.png)
